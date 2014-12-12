@@ -6,4 +6,8 @@ class MatchesController < ApplicationController
   def create  
   end
 
+  def warmup
+  end
+  
+
 end

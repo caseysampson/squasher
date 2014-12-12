@@ -1,0 +1,40 @@
+<br />
+
+<%= form_tag("/", method: "post") do %>
+
+  <div class = "row">
+    <div class = "small-4 medium-4 large-4 columns">
+      <%= label_tag(:player1, "Search for player one.") %>
+      <%= text_field_tag(:player1, "Search for player 1") %>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "small-4 medium-4 large-4 columns">
+      <%= label_tag(:player2, "Search for player two:") %>
+      <%= text_field_tag(:player2, "Search for player 2") %>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "small-4 medium-4 large-4 columns">
+      <%= label_tag(:event, "Event Type:") %>
+      <%= select_tag(:event, options_for_select([['select an option', 0],['challenge', 1],['tournament', 2],['team league',3],['solo league',4],['box league',5],['friendly',6]])) %>
+    </div>
+  <div class = "row">
+    <div class = "small-4 medium-4 large-4 columns">
+      <%= label_tag(:gametype, "Game Type:") %>
+      <%= select_tag(:gametype, options_for_select([['select an option', 0],['Best to 5', 1],['Best to 3', 2],['Timed',3]])) %>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "small-4 medium-4 large-4 columns">
+      <%= label_tag(:scoring, "Scoring:") %>
+      <%= select_tag(:scoring, options_for_select([['select an option', 0],['PAR 11', 1],['PAR 15', 2],['Timed',3]])) %>
+    </div>
+  </div>
+  <div class = "row">
+    <div>
+      <%= submit_tag("Create Match") %>
+    </div>
+  </div>
+<% end %>
+<br>

@@ -1,11 +1,28 @@
 class GamesController < ApplicationController
+  before_filter :get_match
 
   def create
-      match = Match.find(params[:match_id])
-     @game = match.game.create
-    redirect_to match_game_url(@game)
+    @game = @match.games.create
+    redirect_to match_game_url(params[:match_id],@game)
   end
 
   def show
+    # redirect_to match_game_url(params[:match_id],@game,)
+
+  #   @game = Game.find(params[:id])
+
+  #   if @game.rest?
+  #     render 'rest'
+  #   elsif @game.in_progress?
+  #     render 'progress'
+  #   end
+    
+
   end
+
+private
+  def get_match
+    @match = Match.find(params[:match_id])
+  end
+
 end

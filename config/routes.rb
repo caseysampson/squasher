@@ -1,14 +1,11 @@
 Squasher::Application.routes.draw do
 
-  get 'matches/:id/warmup' => 'matches#warmup'
+  # get 'matches/:id/warmup' => 'matches#warmup'
   resources :matches do
     resources :games 
   end
 
-  get 'matches/:id/game/:id' => 'matches#games'
-  resources :matches do
-    resources :games 
-  end
+   get 'matches/:match_id/games/:id' => 'games#rest'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

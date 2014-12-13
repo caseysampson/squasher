@@ -8,9 +8,6 @@ class MatchesController < ApplicationController
     redirect_to match_url(@match)
   end
 
-  def warmup
-  end
-
   def show
     
   end

@@ -27,14 +27,9 @@ ActiveRecord::Schema.define(version: 20141213012611) do
     t.datetime "updated_at"
   end
 
-  create_table "participation", force: true do |t|
+  create_table "participations", force: true do |t|
     t.integer  "player_id"
     t.integer  "match_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "participations", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -49,8 +44,9 @@ ActiveRecord::Schema.define(version: 20141213012611) do
 
   create_table "rallies", force: true do |t|
     t.integer  "game_id"
-    t.string   "server_id",   null: false
-    t.string   "served_from", null: false
+    t.integer  "rally_number"
+    t.string   "server_id",    null: false
+    t.string   "served_from",  null: false
     t.integer  "winner_id"
     t.string   "result"
     t.datetime "created_at"

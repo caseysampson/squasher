@@ -23,6 +23,7 @@ class CreateMatches < ActiveRecord::Migration
 
     create_table :rallies do |t|
       t.integer :game_id
+      t.integer :rally_number
       t.string :server_id, null: false
       t.string :served_from, length: 1, null: false # "L" or "R"
       t.integer :winner_id # only if it's a point or a stroke (nullable if no outcome or let)
@@ -42,11 +43,6 @@ class CreateMatches < ActiveRecord::Migration
       t.timestamps
     end
 
-    create_table :participation do |t|
-      t.integer :player_id
-      t.integer :match_id
-      t.timestamps
-    end
 
   end
 end

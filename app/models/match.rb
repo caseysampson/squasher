@@ -8,7 +8,6 @@ class Match < ActiveRecord::Base
   def rest?
     #if all games are done, return false
     #if game in progress, return false
-  end
-  
+  end  
 
 end

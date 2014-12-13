@@ -16,8 +16,6 @@ class GamesController < ApplicationController
   #   elsif @game.in_progress?
   #     render 'progress'
   #   end
-    
-
   end
 
 private
